@@ -5,17 +5,12 @@ def clean_currency(item: str) -> float:
     return float(stripped)
 
 def extract_year_mdy(timestamp):
-    '''
-    use the datatime.strptime to parse the date and then extract the year
-    '''
+
     datetime_yr = datetime.strptime(timestamp, '%m/%d/%Y %H:%M:%S').year
     return datetime_yr
 
 def clean_country_usa(item: str) ->str:
-    '''
-    This function should replace any combination of 'United States of America', USA' etc.
-    with 'United States'
-    '''
+
     possibilities = [
         'united states of america', 'usa', 'us', 'united states', 'u.s.'
     ]
@@ -28,10 +23,7 @@ def clean_country_usa(item: str) ->str:
 
 if __name__=='__main__':
     print(
-        # """
-        # Add code here if you need to test your functions
-        # comment out the code below this like before sumbitting
-        # to improve your code similarity score."""
+
         clean_currency('$1,000,000.00'),
         extract_year_mdy('12/31/2021 23:59:59'),
         clean_country_usa('United States of America')
