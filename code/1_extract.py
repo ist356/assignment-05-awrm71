@@ -2,15 +2,21 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import pandaslib as pl
+import os
   
 #TODO Write your extraction code here
-data = pd.read_csv('https://docs.google.com/spreadsheets/d/1IPS5dBSGtwYVbjsfbaMCYIWnOuRmJcbequohNxCyGVw/export?resourcekey=&gid=1625408792&format=csv') 
+cache_dir = "cache"
+if not os.path.exists(cache_dir):
+    os.makedirs(cache_dir)
 
-data['year'] = data['Timestamp'].apply(pl.extract_year_mdy)
+survey = pd.read_csv('https://docs.google.com/spreadsheets/d/1IPS5dBSGtwYVbjsfbaMCYIWnOuRmJcbequohNxCyGVw/export?resourcekey=&gid=1625408792&format=csv') 
 
-data.to_csv('cache/survey.csv', index=False)
+survey['year'] = survey['Timestamp'].apply(pl.extract_year_mdy)
 
-years = data['year'].unique()
+# data.to_csv('', index=False)
+survey.to_csv('cache/survey.csv', index=False)
+
+years = survey['year'].unique()
 
 for year in years:
     col_year = pd.read_html(f"https://www.numbeo.com/cost-of-living/rankings.jsp?title={year}&displayColumn=0")
