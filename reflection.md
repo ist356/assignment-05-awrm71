@@ -22,4 +22,4 @@ Examples:
 **Best Reflection** "I learned when to use while vs for loops. While loops are for sentiel-controlled values (waiting for a condition to occur), vs for loops are for iterating over collections of fixed values."
 
 `--- Reflection Below This Line ---`
-
+Majority of the code that we did in this assignment was very simple. For the extract and transform files I feel like they were very easy to create especially with copilot. I will say I do prefer to do my code in a ipynb file rather than a py file but I never know if that is acceptable or not. While I did feel that the first two steps of the assignment were very simplistic in terms of data manipulation and calculations, I found the third/final step to be interesting. It wasn't hard to actual upload the files (or at least I think I did since I can only see my bucket but not the actual files) but I would love to learn more about aws and how this code works along with the actual uses of these types of code/programs.
